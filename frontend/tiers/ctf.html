@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — CTF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../index.html" class="back-link">← Back to menu</a>
+        <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <h1 class="page-title">Choose your tier</h1>
+    <p class="page-subtitle">Each tier is a freshly deployed, genuinely misconfigured environment.</p>
+
+    <nav class="tier-grid">
+      <a class="tier-card tier-easy" href="easy_tier/easy.html">
+        <span class="tier-label">Easy</span>
+        <span class="tier-desc">A single misconfiguration. No credentials required.</span>
+      </a>
+
+      <a class="tier-card tier-easy" href="medium_tier/ctf.html">
+        <span class="tier-label">Medium</span>
+        <span class="tier-desc">A two-step privilege escalation chain.</span>
+      </a>
+
+      <a class="tier-card tier-easy" href="hard_tier/ctf.html">
+        <span class="tier-label">Hard</span>
+        <span class="tier-desc">A multi-step pivot via stolen credentials.</span>
+      </a>
+    </nav>
+  </main>
+  <script src="../nickname.js"></script>
+</body>
+</html>

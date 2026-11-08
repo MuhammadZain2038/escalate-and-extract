@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="menu-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <main class="menu-wrap">
+    <div class="cube-scene" aria-hidden="true">
+      <div class="cube-glow"></div>
+      <div class="cube">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+
+    <h1 class="game-title">ESCALATE &amp; EXTRACT</h1>
+    <p class="game-subtitle">CLOUD ATTACK RANGE</p>
+
+    <nav class="menu-list">
+      <a class="menu-item" href="tiers/walkthrough.html">
+        <span class="menu-index">01</span>
+        <span class="menu-text">Walkthrough</span>
+        <span class="menu-arrow">›</span>
+      </a>
+      <a class="menu-item" href="tiers/ctf.html">
+        <span class="menu-index">02</span>
+        <span class="menu-text">CTF</span>
+        <span class="menu-arrow">›</span>
+      </a>
+      <a class="menu-item" href="scoreboard.html">
+        <span class="menu-index">03</span>
+        <span class="menu-text">Scoreboard</span>
+        <span class="menu-arrow">›</span>
+      </a>
+      <button class="menu-item" id="exit-all-btn">
+        <span class="menu-index">04</span>
+        <span class="menu-text">Exit</span>
+        <span class="menu-arrow">›</span>
+      </button>
+    </nav>
+  </main>
+
+  <p class="footer-note">Running locally via Docker and LocalStack — nothing here touches real AWS.</p>
+
+  <script src="nickname.js"></script>
+  <script src="exit.js"></script>
+</body>
+</html>

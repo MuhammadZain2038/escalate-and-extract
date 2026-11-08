@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Scoreboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="index.html" class="back-link">← Back to menu</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <h1 class="page-title">Scoreboard</h1>
+    <p class="page-subtitle">Ranked by total score across all completed tiers.</p>
+
+    <section id="leaderboard-section">
+      <p id="leaderboard-status" class="hint">Loading...</p>
+      <table class="leaderboard-table" id="leaderboard-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Total</th>
+            <th>Easy</th>
+            <th>Medium</th>
+            <th>Hard</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="nickname.js"></script>
+  <script src="scoreboard.js"></script>
+</body>
+</html>

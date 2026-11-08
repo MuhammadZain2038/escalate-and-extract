@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Easy Tier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../ctf.html" class="back-link">← Back to tiers</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main page-main-narrow">
+    <h1 class="page-title">Tier: Easy</h1>
+    <p class="page-subtitle tagline">A hands-on cloud misconfiguration range</p>
+
+    <section class="scenario">
+      <h2>Briefing</h2>
+      <p class="brief">
+        A dev team at CorpTech recently spun up a storage bucket for a new project.
+        Word is it was set up in a hurry, and nobody's checked who can actually reach it.
+        See if you can find it, and find out what's inside.
+      </p>
+      <p class="hint"><strong>Hint:</strong> bucket names tend to follow the pattern <code>corptech-dev-*</code></p>
+      <p class="target"><strong>Target endpoint:</strong> <code>http://localhost:4566</code></p>
+      <p class="hint-command">Try: <code>aws s3 ls s3://&lt;bucket-name&gt; --endpoint-url http://localhost:4566 --no-sign-request</code></p>
+      <button id="launch-btn">Launch environment</button>
+      <button id="exit-btn">Exit environment</button>
+      <p id="launch-status"></p>
+    </section>
+
+    <section class="submit">
+      <h2>Submit flag</h2>
+      <form id="flag-form">
+        <input type="text" id="flag-input" placeholder="EE{...}" autocomplete="off">
+        <button type="submit">Submit</button>
+      </form>
+      <p id="submit-status"></p>
+    </section>
+
+        <div class="ctf-instructor-wrap is-hidden" id="ctf-instructor-wrap">
+      <div class="instructor-cube-scene">
+        <div class="cube cube-instructor" id="ctf-instructor-cube">
+          <div class="cube-face face-front">
+            <span class="eye eye-left"></span>
+            <span class="eye eye-right"></span>
+          </div>
+          <div class="cube-face face-back"></div>
+          <div class="cube-face face-right"></div>
+          <div class="cube-face face-left"></div>
+          <div class="cube-face face-top"></div>
+          <div class="cube-face face-bottom"></div>
+        </div>
+        <span class="ctf-hint-label">Hint</span>
+      </div>
+      <div class="speech-bubble ctf-hint-bubble is-hidden" id="ctf-hint-bubble">
+        <p id="ctf-hint-text"></p>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="../../scoring.js"></script>
+  <script src="../../nickname.js"></script>
+  <script src="easy.js"></script>
+  <script src="easy-hint.js"></script>
+</body>
+</html>

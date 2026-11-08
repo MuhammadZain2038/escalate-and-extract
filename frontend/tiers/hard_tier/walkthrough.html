@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Hard Walkthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../walkthrough.html" class="back-link">← Back to walkthroughs</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="walkthrough-main">
+    <div class="walkthrough-text">
+      <h1 class="page-title" id="step-title">The App and the Walled-Off Service</h1>
+      <p class="page-subtitle" id="step-desc">
+        Not every vulnerability lives inside the cloud resource itself. Sometimes it's a normal
+        app bug that happens to reach somewhere it shouldn't. Hover over each piece to see what it does.
+      </p>
+    </div>
+
+    <div class="scene-frame">
+      <div class="instructor-wrap" id="instructor-wrap">
+        <div class="instructor-cube-scene">
+          <div class="particle-burst" id="particle-burst"></div>
+          <div class="cube cube-instructor" id="instructor-cube">
+            <div class="cube-face face-front">
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+            </div>
+            <div class="cube-face face-back"></div>
+            <div class="cube-face face-right"></div>
+            <div class="cube-face face-left"></div>
+            <div class="cube-face face-top"></div>
+            <div class="cube-face face-bottom"></div>
+          </div>
+        </div>
+        <div class="speech-bubble" id="speech-bubble">
+          <p id="speech-text"></p>
+          <button id="speech-next" class="speech-next-btn">Next</button>
+        </div>
+      </div>
+
+      <img id="scene-image" class="scene-image" src="assets/01-overview.jpg" alt="Public app and internal credential service overview">
+
+            <div class="hotspot-layer" data-step="1">
+        <button class="hotspot" style="left:33%; top:48%;" data-title="Public Web App" data-desc="A normal application, reachable from anywhere. It happens to have a feature that fetches a URL for you.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:34%; top:36%;" data-title="Fetch Feature" data-desc="A convenience feature — paste a URL, get a preview. Harmless, as long as it only fetches what it's meant to.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:69%; top:52%;" data-title="Internal Credential Service" data-desc="Not meant to be reachable from the outside world at all — only from inside the app's own network.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:69%; top:30%;" data-title="Isolation Boundary" data-desc="The barrier that's supposed to keep this service unreachable from outside — in theory.">
+          <span class="hotspot-dot"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="walkthrough-nav">
+      <button id="prev-btn" disabled>← Back</button>
+      <span class="step-indicator" id="step-indicator">Step 1 of 4</span>
+      <button id="next-btn">Next →</button>
+    </div>
+  </main>
+
+  <script src="../../nickname.js"></script>
+  <script src="walkthrough.js"></script>
+
+</body>
+</html>

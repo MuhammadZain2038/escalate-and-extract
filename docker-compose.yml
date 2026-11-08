@@ -1,0 +1,47 @@
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN}
+      - SERVICES=s3,iam,sts,ec2
+      - DEBUG=1
+    volumes:
+      - "./.localstack:/var/lib/localstack"
+
+  frontend:
+    container_name: ee-frontend
+    build: ./frontend
+    ports:
+      - "8000:80"
+    volumes:
+      - "./frontend:/usr/share/nginx/html"
+
+  backend:
+    container_name: ee-backend
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./easy-tier:/app/easy-tier"
+      - "./medium-tier:/app/medium-tier"
+      - "./hard-tier:/app/hard-tier"
+      - "./backend/app.py:/app/app.py"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    depends_on:
+      - localstack
+
+
+  hard-webapp:
+    container_name: ee-hard-webapp
+    build: ./hard-tier/webapp
+    ports:
+      - "5002:5000"
+    depends_on:
+      - hard-metadata
+
+  hard-metadata:
+    container_name: ee-hard-metadata
+    build: ./hard-tier/metadata

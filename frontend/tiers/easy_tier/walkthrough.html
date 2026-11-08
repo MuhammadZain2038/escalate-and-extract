@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Walkthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../walkthrough.html" class="back-link">← Back to walkthroughs</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="walkthrough-main">
+    <div class="walkthrough-text">
+      <h1 class="page-title" id="step-title">The Cloud Environment</h1>
+      <p class="page-subtitle" id="step-desc">
+        This is a small cluster of cloud resources — storage, compute, identity, and access
+        control. Hover over each piece to see what it does.
+      </p>
+    </div>
+
+    <div class="scene-frame">
+      <div class="instructor-wrap" id="instructor-wrap">
+        <div class="instructor-cube-scene">
+          <div class="particle-burst" id="particle-burst"></div>
+          <div class="cube cube-instructor" id="instructor-cube">
+            <div class="cube-face face-front">
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+            </div>
+            <div class="cube-face face-back"></div>
+            <div class="cube-face face-right"></div>
+            <div class="cube-face face-left"></div>
+            <div class="cube-face face-top"></div>
+            <div class="cube-face face-bottom"></div>
+          </div>
+        </div>
+        <div class="speech-bubble" id="speech-bubble">
+          <p id="speech-text"></p>
+          <button id="speech-next" class="speech-next-btn">Next</button>
+        </div>
+      </div>
+      
+      <img id="scene-image" class="scene-image" src="assets/01-overview.jpg" alt="Cloud infrastructure overview">
+      
+      <div class="hotspot-layer" data-step="1">
+        <button class="hotspot" style="left:38%; top:30%;" data-title="IAM" data-desc="Identity and Access Management — decides who is allowed to do what, to which resource.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:50%; top:37%;" data-title="Compute" data-desc="A running server. What happens here is normal — the cloud-specific risk is what it can reach, not the code itself.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:62%; top:30%;" data-title="STS" data-desc="Security Token Service — issues temporary credentials when a role is assumed.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:38%; top:65%;" data-title="S3 Bucket" data-desc="Object storage. This is what we're focusing on in the Easy tier.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:60%; top:65%;" data-title="Monitoring" data-desc="Logs and observability — in a real breach, this is often where it's noticed after the fact.">
+          <span class="hotspot-dot"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="walkthrough-nav">
+      <button id="prev-btn" disabled>← Back</button>
+      <span class="step-indicator" id="step-indicator">Step 1 of 4</span>
+      <button id="next-btn">Next →</button>
+    </div>
+  </main>
+  <script src="../../nickname.js"></script>
+  <script src="walkthrough.js"></script>
+</body>
+</html>

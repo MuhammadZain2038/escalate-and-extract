@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Medium Walkthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../../index.html" class="back-link">← Back to menu</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="walkthrough-main">
+    <div class="walkthrough-text">
+      <h1 class="page-title" id="step-title">The Identity &amp; Access Layer</h1>
+      <p class="page-subtitle" id="step-desc">
+        Every identity in the cloud can be trusted to act as another, more powerful one —
+        if something allows it. Hover over each piece to see what it does.
+      </p>
+    </div>
+
+    <div class="scene-frame">
+      <div class="instructor-wrap" id="instructor-wrap">
+        <div class="instructor-cube-scene">
+          <div class="particle-burst" id="particle-burst"></div>
+          <div class="cube cube-instructor" id="instructor-cube">
+            <div class="cube-face face-front">
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+            </div>
+            <div class="cube-face face-back"></div>
+            <div class="cube-face face-right"></div>
+            <div class="cube-face face-left"></div>
+            <div class="cube-face face-top"></div>
+            <div class="cube-face face-bottom"></div>
+          </div>
+        </div>
+        <div class="speech-bubble" id="speech-bubble">
+          <p id="speech-text"></p>
+          <button id="speech-next" class="speech-next-btn">Next</button>
+        </div>
+      </div>
+
+      <img id="scene-image" class="scene-image" src="assets/01-overview.jpg" alt="Cloud identity and access overview">
+
+      <div class="hotspot-layer" data-step="1">
+        <button class="hotspot" style="left:50%; top:43%;" data-title="Privileged Role" data-desc="A role with broad permissions. Nobody logs in as a role directly — identities have to be trusted to assume it.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:37%; top:70%;" data-title="Low-Privilege Identity" data-desc="An ordinary user account. On its own, it can't do much — but what it's allowed to assume matters.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:32%; top:59%;" data-title="Leaked Note" data-desc="A careless internal note, left somewhere discoverable. This is how most real leaks start.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:41%; top:63%;" data-title="Leaked Key" data-desc="A real, working credential, exposed right alongside the note that explains what it's for.">
+          <span class="hotspot-dot"></span>
+        </button>
+        <button class="hotspot" style="left:64%; top:33%;" data-title="Other Identities" data-desc="Other accounts in the same environment — not every identity has the same reach.">
+          <span class="hotspot-dot"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="walkthrough-nav">
+      <button id="prev-btn" disabled>← Back</button>
+      <span class="step-indicator" id="step-indicator">Step 1 of 4</span>
+      <button id="next-btn">Next →</button>
+    </div>
+  </main>
+
+  <script src="../../nickname.js"></script>
+  <script src="walkthrough.js"></script>
+</body>
+</html>

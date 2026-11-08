@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalate & Extract — Hard Tier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="page-screen">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="../ctf.html" class="back-link">← Back to tiers</a>
+    <div class="topbar-cube-scene" id="topbar-cube" aria-hidden="true">
+      <div class="cube cube-mini">
+        <div class="cube-face face-front"></div>
+        <div class="cube-face face-back"></div>
+        <div class="cube-face face-right"></div>
+        <div class="cube-face face-left"></div>
+        <div class="cube-face face-top"></div>
+        <div class="cube-face face-bottom"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main page-main-narrow">
+    <h1 class="page-title">Tier: Hard</h1>
+    <p class="page-subtitle tagline">The Side Door — SSRF to stolen credentials</p>
+
+    <section class="scenario">
+      <h2>Briefing</h2>
+      <p class="brief">
+        CorpTech's internal reporting tool lets staff preview data from any URL — a convenience
+        feature nobody thought to restrict. The server it runs on has its own cloud credentials.
+        See if the preview feature can be convinced to fetch something it shouldn't.
+      </p>
+      <p class="hint"><strong>Hint:</strong> cloud instances fetch their own credentials from an internal-only metadata address.</p>
+      <p class="target"><strong>Vulnerable app:</strong> <code id="webapp-link">launch to get the URL</code></p>
+      <p class="hint-command">Once you've found the SSRF parameter, try pointing it at:<br>
+        <code>http://hard-metadata:9000/latest/meta-data/iam/security-credentials/</code></p>
+      <p class="hint-command">That returns a role name. Append it to the same path to get real credentials.</p>
+      <button id="launch-btn">Launch environment</button>
+      <button id="exit-btn">Exit environment</button>
+      <p id="launch-status"></p>
+    </section>
+
+    <section class="submit">
+      <h2>Submit stolen credentials</h2>
+      <p class="hint">Paste the three values from the stolen metadata response below.</p>
+      <form id="verify-form">
+        <input type="text" id="access-key-input" placeholder="AccessKeyId" autocomplete="off">
+        <input type="text" id="secret-key-input" placeholder="SecretAccessKey" autocomplete="off">
+        <input type="text" id="session-token-input" placeholder="Token" autocomplete="off">
+        <button type="submit">Verify</button>
+      </form>
+      <p id="submit-status"></p>
+    </section>
+
+    <section class="submit">
+      <h2>Submit flag</h2>
+      <form id="flag-form">
+        <input type="text" id="flag-input" placeholder="EE{...}" autocomplete="off">
+        <button type="submit">Submit</button>
+      </form>
+      <p id="flag-submit-status"></p>
+    </section>
+
+        <div class="ctf-instructor-wrap is-hidden" id="ctf-instructor-wrap">
+      <div class="instructor-cube-scene">
+        <div class="cube cube-instructor" id="ctf-instructor-cube">
+          <div class="cube-face face-front">
+            <span class="eye eye-left"></span>
+            <span class="eye eye-right"></span>
+          </div>
+          <div class="cube-face face-back"></div>
+          <div class="cube-face face-right"></div>
+          <div class="cube-face face-left"></div>
+          <div class="cube-face face-top"></div>
+          <div class="cube-face face-bottom"></div>
+        </div>
+        <span class="ctf-hint-label">Hint</span>
+      </div>
+      <div class="speech-bubble ctf-hint-bubble is-hidden" id="ctf-hint-bubble">
+        <p id="ctf-hint-text"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../scoring.js"></script>
+  <script src="../../nickname.js"></script>
+  <script src="hard.js"></script>
+  <script src="hint.js"></script>
+</body>
+</html>
