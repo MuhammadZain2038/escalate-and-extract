@@ -78,16 +78,45 @@ Ready to compromise your first cloud environment?
 ### Prerequisites
 
 - Docker Desktop
+- The AWS CLI (v2)
 - A free LocalStack Hobby account
 - A LocalStack Auth Token
 
-### 1. 🔑 Get Your LocalStack Token
+### 1. 🐳 Install Docker Desktop
+
+Download and install it from the official page: [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/)
+
+After installing, **launch Docker Desktop once** and wait for it to say "Engine running" before continuing — it needs to fully start before any `docker` command will work.
+
+### 2. 🔧 Install the AWS CLI
+
+Every exploit in this project runs through the real AWS CLI, from your own terminal — it isn't something Docker installs for you.
+
+Open PowerShell and run:
+
+```powershell
+msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+```
+
+This is AWS's own official installer command.
+
+After installing, **close and reopen PowerShell** before continuing — a freshly opened terminal is required to pick up the new `aws` command.
+
+Verify it worked:
+
+```powershell
+aws --version
+```
+
+You should see version output like `aws-cli/2.x.x`.
+
+### 3. 🔑 Get Your LocalStack Token
 
 Create a free account at [LocalStack Cloud](https://app.localstack.cloud) and copy your Auth Token from the dashboard.
 
 > LocalStack requires an account-backed token for its current free offering. Each container needs an account behind it, so this is a standard setup requirement for LocalStack-based projects.
 
-### 2. ⚙️ Configure Your Environment
+### 4. ⚙️ Configure Your Environment
 
 Copy `.env.example` to `.env` and add your token:
 
@@ -95,7 +124,7 @@ Copy `.env.example` to `.env` and add your token:
 LOCALSTACK_AUTH_TOKEN=your-token-here
 ```
 
-### 3. 🎮 Launch the Attack Range
+### 5. 🎮 Launch the Attack Range
 
 Run the launcher:
 
@@ -115,7 +144,6 @@ Once everything is ready, head to:
 **http://localhost:8000**
 
 Your attack range is live. Time to find your first vulnerability.
-
 ### 4. 🛑 Exit or Clean Up
 
 When you're done playing:
