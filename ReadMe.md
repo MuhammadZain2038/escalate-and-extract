@@ -16,7 +16,8 @@ Just you, your terminal, and a cloud environment waiting to be compromised.
 
 Built as a combined project for **Information Assurance and Cloud Security coursework.**
 
-<img width="3584" height="1184" alt="Escalate & Extract — Cloud Attack Range" src="https://github.com/user-attachments/assets/86bcca8b-98dc-4745-a424-d5656351136f" />
+<img width="1920" height="1080" alt="main meu" src="https://github.com/user-attachments/assets/ef1d21e3-339d-4280-b6af-337109dfb3da" />
+
 
 ---
 
