@@ -16,7 +16,7 @@ Just you, your terminal, and a cloud environment waiting to be compromised.
 
 Built as a combined project for **Information Assurance and Cloud Security coursework.**
 
-<img width="1920" height="1080" alt="main meu" src="https://github.com/user-attachments/assets/ef1d21e3-339d-4280-b6af-337109dfb3da" />
+<img width="1461" height="815" alt="main menu" src="https://github.com/user-attachments/assets/a621ffa9-36f5-49e7-8a43-468a06e22dc6" />
 
 
 ---
